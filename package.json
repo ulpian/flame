@@ -1,0 +1,11 @@
+{
+  "name": "hapy",
+  "version": "0.0.1",
+  "description": "Test api server with hapi js and firebase",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ulpian Morina <ulpianmorina@gmail.com>",
+  "license": "ISC"
+}
