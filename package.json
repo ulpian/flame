@@ -4,8 +4,18 @@
   "description": "Test api server with hapi js and firebase",
   "main": "api.js",
   "scripts": {
+    "start": "export NODE_ENV=production && node api.js",
+    "start-staging": "export NODE_ENV=staging && node api.js",
+    "start-dev": "./node_modules/.bin/nodemon --debug api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.24.0",
+    "hapi": "^15.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
