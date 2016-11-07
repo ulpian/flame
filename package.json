@@ -16,7 +16,10 @@
     "electrolyte": "^0.3.0",
     "firebase": "^3.5.3",
     "hapi": "^15.2.0",
-    "joi": "^9.2.0"
+    "hapi-swagger": "^7.4.0",
+    "inert": "^4.0.2",
+    "joi": "^9.2.0",
+    "vision": "^4.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

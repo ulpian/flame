@@ -7,6 +7,13 @@ exports = module.exports = (joi, base) => {
     routes.push({
         method: 'GET',
         path: '/',
+
+        config: {
+            description: 'Base root route',
+            notes: 'Returns a hello world :)',
+            tags: ['api']
+        },
+
         handler: (request, reply) => {
             reply(base.root());
         }

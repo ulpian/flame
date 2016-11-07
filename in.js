@@ -17,8 +17,10 @@ module.exports = (config) => {
     // Initiate new HAPI server
     const api = new hapi.Server();
 
+    // API connection config
     api.connection({ port: baseConfig.port });
 
+    // Routes setup
     api.route(ioc.create('base.routes'));
 
     return api;

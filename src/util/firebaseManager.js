@@ -18,6 +18,10 @@ exports = module.exports = (firebase, config) => {
             newObj.set(data)
             return newObj.key;
         }
+
+        readKey(key) {
+            let readObj = this.ref.orderByKey().on(key)
+        }
     }
 
     return Firebase;
