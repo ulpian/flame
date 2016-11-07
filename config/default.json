@@ -1,5 +1,10 @@
 {
     "Base": {
-        "port": 3000
+        "port": 3000,
+        "firebase": {
+            "apiKey": 0,
+            "databaseURL": "https://zjarr-fb09f.firebaseio.com/",
+            "serviceAccount": ""
+        }
     }
 }

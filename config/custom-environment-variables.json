@@ -1,0 +1,8 @@
+{
+    "Base": {
+        "firebase": {
+            "apiKey": "FIREBASE_APIKEY",
+            "serviceAccount": "FIREBASE_ACCOUNT_CRED"
+        }
+    }
+}

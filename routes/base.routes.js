@@ -27,6 +27,19 @@ exports = module.exports = (joi, base) => {
         }
     })
 
+    routes.push({
+        method: 'POST',
+        path: '/{name}/{age}',
+        handler: (request, reply) => {
+            let someData = base.saveData({
+                name: request.params.name,
+                age: request.params.age
+            })
+
+            reply({status: 'success', data: someData})
+        }
+    })
+
     return routes;
 };
 
