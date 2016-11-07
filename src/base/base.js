@@ -3,7 +3,7 @@
 exports = module.exports = (joi, firebaseManager) => {
 
     // Set firebase
-    let fb = new firebaseManager('/base/employees');
+    let fb = new firebaseManager('/base/data');
 
     class Base {
         static root() {
@@ -16,6 +16,18 @@ exports = module.exports = (joi, firebaseManager) => {
 
         static saveData(post) {
             return fb.save(post);
+        }
+
+        static getUserByKey(key) {
+            return new Promise((res, rej) => {
+                fb.readByKey(key)
+                .then((data) => {
+                    res(data);
+                })
+                .catch((err) => {
+                    rej(err);
+                });
+            })
         }
     }
 

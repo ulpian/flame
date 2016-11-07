@@ -36,14 +36,40 @@ exports = module.exports = (joi, base) => {
 
     routes.push({
         method: 'POST',
-        path: '/{name}/{age}',
+        path: '/base/{name}/{age}',
         handler: (request, reply) => {
             let someData = base.saveData({
                 name: request.params.name,
                 age: request.params.age
             })
 
-            reply({status: 'success', data: someData})
+            reply({ data: someData })
+        }
+    })
+
+    routes.push({
+        method: 'GET',
+        path: '/base/{key}',
+
+        config: {
+            description: 'Read base reference with a key',
+            notes: 'Returns the JSON object from Base reference by its key',
+            tags: ['api'],
+            validate: {
+                params: {
+                    key: joi.string()
+                }
+            }
+        },
+
+        handler: (request, reply) => {
+            let someData = base.getUserByKey(request.params.key)
+            .then((data) => {
+                reply({ data: data });
+            })
+            .catch((err) => {
+                reply({ error: err })
+            })
         }
     })
 

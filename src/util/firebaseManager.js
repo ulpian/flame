@@ -19,8 +19,18 @@ exports = module.exports = (firebase, config) => {
             return newObj.key;
         }
 
-        readKey(key) {
-            let readObj = this.ref.orderByKey().on(key)
+        readByKey(key) {
+            let dataList = [];
+            return new Promise((res, rej) => {
+                let readObj = this.ref.orderByKey().equalTo(key)
+                .on("value", (snapshot) => {
+                    snapshot.forEach((data) => {
+                        dataList.push(data.val());
+                    })
+
+                    res(dataList);
+                })
+            })
         }
     }
 
