@@ -1,24 +1,8 @@
 'use strict';
 
-//  Hapy API Server
-const hapi = require('hapi');
+// Get configuration
 const config = require('config');
-
-// Initiate new HAPI server
-const api = new hapi.Server();
-
-// Set configuration
-let baseConfig = config.get('Base');
-
-api.connection({ port: baseConfig.port });
-
-api.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, reply) => {
-        reply({ message: 'hey world!' });
-    }
-});
+const api = require('./in')(config);
 
 api.start((err) => {
     if (err) {
