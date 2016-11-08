@@ -1,3 +1,5 @@
+![flame icon](flame.png)
+
 # flame
 Simple API server setup with Hapi.js + Firebase.
 
