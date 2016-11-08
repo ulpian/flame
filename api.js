@@ -3,19 +3,27 @@
 // Get configuration
 const config = require('config');
 const api = require('./in')(config);
-// Documentation setup
-const Inert = require('inert');
-const Vision = require('vision');
-const HapiSwagger = require('hapi-swagger');
 const Pack = require('./package');
 
 // Documentation runner
-api.register([Inert, Vision, {
-        register: HapiSwagger,
+api.register([require('inert'), require('vision'), {
+        register: require('hapi-swagger'),
         options: {
             info: {
                 title: 'API Documentation',
                 version: Pack.version
+            }
+        }
+    },{
+        register: require('good'),
+        options: {
+            ops: {
+                interval: 1000
+            },
+            reporters: {
+                console: [{
+                    module: 'good-console'
+                }, 'stdout'],
             }
         }
     }], (err) => {

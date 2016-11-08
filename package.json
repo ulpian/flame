@@ -1,5 +1,5 @@
 {
-  "name": "hapy",
+  "name": "flame",
   "version": "0.0.1",
   "description": "Test api server with hapi js and firebase",
   "main": "api.js",
@@ -15,6 +15,8 @@
     "config": "^1.24.0",
     "electrolyte": "^0.3.0",
     "firebase": "^3.5.3",
+    "good": "^7.0.2",
+    "good-console": "^6.3.1",
     "hapi": "^15.2.0",
     "hapi-swagger": "^7.4.0",
     "inert": "^4.0.2",
