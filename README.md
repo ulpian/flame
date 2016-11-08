@@ -1,4 +1,4 @@
-# hapi-firebase-server
+# flame
 Simple API server setup with Hapi.js + Firebase.
 
 ## Running the API
