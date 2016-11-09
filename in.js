@@ -10,9 +10,9 @@ module.exports = (config) => {
 
     // Load resources
     ioc.use('config', baseConfig)
-    ioc.use(ioc.dir('node_modules'))
-    ioc.use(ioc.dir('routes'))
-    ioc.use(ioc.dir('src'))
+    ioc.use(ioc.dir(__dirname + '/node_modules'))
+    ioc.use(ioc.dir(__dirname + '/routes'))
+    ioc.use(ioc.dir(__dirname + '/src'))
 
     // Initiate new HAPI server
     const api = new hapi.Server();
