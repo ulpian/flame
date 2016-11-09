@@ -7,11 +7,12 @@
     "start": "export NODE_ENV=production && node api.js",
     "start-staging": "export NODE_ENV=staging && node api.js",
     "start-dev": "./node_modules/.bin/nodemon --debug api.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "chai": "^3.5.0",
     "config": "^1.24.0",
     "electrolyte": "^0.3.0",
     "firebase": "^3.5.3",
@@ -21,6 +22,8 @@
     "hapi-swagger": "^7.4.0",
     "inert": "^4.0.2",
     "joi": "^9.2.0",
+    "mocha": "^3.1.2",
+    "supertest": "^2.0.1",
     "vision": "^4.1.0"
   },
   "devDependencies": {
