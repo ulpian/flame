@@ -12,5 +12,7 @@ For running the server under production you can run;
 For testing run;
 `npm test`
 
+**This runs both server/ (using supertest on the API as a http server) and model/ (on the Classes run by the models) tests.**
+
 ### Starting server for development
 `npm run start-dev`

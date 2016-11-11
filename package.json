@@ -5,9 +5,9 @@
   "main": "api.js",
   "scripts": {
     "start": "export NODE_ENV=production && node api.js",
-    "start-staging": "export NODE_ENV=staging && node api.js",
+    "start-staging": "export NODE_ENV=staging && node --prof api.js",
     "start-dev": "./node_modules/.bin/nodemon --debug api.js",
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha test/**/*.test.js"
   },
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
   "license": "ISC",

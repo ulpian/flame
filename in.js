@@ -1,7 +1,5 @@
 'use strict';
 
-//  Hapy API Server
-const hapi = require('hapi');
 const ioc = require('electrolyte');
 
 module.exports = (config) => {
@@ -9,19 +7,13 @@ module.exports = (config) => {
     let baseConfig = config.get('Base');
 
     // Load resources
-    ioc.use('config', baseConfig)
-    ioc.use(ioc.dir(__dirname + '/node_modules'))
-    ioc.use(ioc.dir(__dirname + '/routes'))
-    ioc.use(ioc.dir(__dirname + '/src'))
+    ioc.use('config', baseConfig);
+    ioc.use(ioc.node_modules());
+    ioc.use(ioc.dir(__dirname + '/routes'));
+    ioc.use(ioc.dir(__dirname + '/src'));
 
-    // Initiate new HAPI server
-    const api = new hapi.Server();
+    ioc.routes = [];
+    ioc.routes = ioc.routes.concat(ioc.create('base.routes'));
 
-    // API connection config
-    api.connection({ port: baseConfig.port });
-
-    // Routes setup
-    api.route(ioc.create('base.routes'));
-
-    return api;
+    return ioc;
 }

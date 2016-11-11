@@ -1,9 +1,20 @@
 'use strict';
 
+//  Hapy API Server
+const hapi = require('hapi');
 // Get configuration
 const config = require('config');
-const api = require('./in')(config);
+const ioc = require('./in')(config);
 const Pack = require('./package');
+
+// Initiate new HAPI server
+const api = new hapi.Server();
+
+// API connection config
+api.connection({ port: config.port });
+
+// Routes setup
+api.route(ioc.routes);
 
 // Documentation runner
 api.register([require('inert'), require('vision'), {
