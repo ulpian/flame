@@ -7,7 +7,9 @@
     "start": "export NODE_ENV=production && node api.js",
     "start-staging": "export NODE_ENV=staging && node api.js",
     "start-dev": "./node_modules/.bin/nodemon --debug api.js",
-    "test": "./node_modules/.bin/mocha test/**/*.test.js"
+    "test": "./node_modules/.bin/mocha test/**/*.test.js",
+    "test-model": "./node_modules/.bin/mocha test/model/*.test.js test/model/**/*.test.js",
+    "test-server": "./node_modules/.bin/mocha test/server/*.test.js test/server/**/*.test.js"
   },
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
   "license": "ISC",
