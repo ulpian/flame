@@ -1,7 +1,8 @@
 ![flame icon](flame.png)
 
 # flame
-Simple API server setup with Hapi.js + IOC via Electrolyte + Firebase.
+API server setup with Hapi.js + IOC via Electrolyte...
+with a few tools thrown in to make development and execution easier.
 
 ## Running the API
 
