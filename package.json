@@ -5,7 +5,7 @@
   "main": "api.js",
   "scripts": {
     "start": "export NODE_ENV=production && node api.js",
-    "start-staging": "export NODE_ENV=staging && node --prof api.js",
+    "start-staging": "export NODE_ENV=staging && node api.js",
     "start-dev": "./node_modules/.bin/nodemon --debug api.js",
     "test": "./node_modules/.bin/mocha test/**/*.test.js"
   },
@@ -16,8 +16,6 @@
     "config": "^1.24.0",
     "electrolyte": "^0.3.0",
     "firebase": "^3.5.3",
-    "good": "^7.0.2",
-    "good-console": "^6.3.1",
     "hapi": "^15.2.0",
     "hapi-swagger": "^7.4.0",
     "inert": "^4.0.2",

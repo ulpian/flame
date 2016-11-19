@@ -11,7 +11,11 @@ exports = module.exports = (joi, firebaseManager) => {
         }
 
         static sayhi(name) {
-            return `Hi ${name}`;
+            if (name !== undefined) {
+                return `Hi ${name}`;
+            } else {
+                return false
+            }
         }
 
         static saveData(post) {

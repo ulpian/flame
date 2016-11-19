@@ -25,18 +25,6 @@ api.register([require('inert'), require('vision'), {
                 version: Pack.version
             }
         }
-    },{
-        register: require('good'),
-        options: {
-            ops: {
-                interval: 1000
-            },
-            reporters: {
-                console: [{
-                    module: 'good-console'
-                }, 'stdout'],
-            }
-        }
     }], (err) => {
 
     if (err) {
