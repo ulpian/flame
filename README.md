@@ -17,9 +17,10 @@ For tests (Both model and server tests) run;
 
 You can also test model and server seperately by running;
 
-`npm run test-model`
-
-`npm run test-server`
+```
+npm run test-model
+npm run test-server
+```
 
 **This runs both server/ (using supertest on the API as a http server) and model/ (on the Classes run by the models) tests.**
 
