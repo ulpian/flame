@@ -1,7 +1,22 @@
 'use strict';
 
 exports = module.exports = (joi) => {
-    return class Flame {}
+    const model = {
+        name: joi.string().alphanum().max(30).required(),
+        heat: joi.number().integer().min(0).max(10)
+    }
+
+    return class FlameModel {
+        static val = (obj) => {
+            joi.validate(obj, model, (err, value) => {
+                if (err) {
+                    return err;
+                }
+
+                return value;
+            });
+        }
+    }
 };
 
 exports['@require'] = ['joi'];
