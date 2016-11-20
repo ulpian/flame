@@ -13,7 +13,7 @@ module.exports = (config) => {
     ioc.use(ioc.dir(__dirname + '/src'));
 
     ioc.routes = [];
-    ioc.routes = ioc.routes.concat(ioc.create('base.routes'));
+    ioc.routes = ioc.routes.concat(ioc.create('flame.routes'));
 
     return ioc;
 }

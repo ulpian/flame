@@ -17,14 +17,13 @@ api.route(ioc.routes);
 // Supertest connection to api
 const tapi = request(api.listener);
 
-describe('Base http endpoints tests', () => {
+describe('Flame http endpoints tests', () => {
     describe('/', () => {
         it('Should get root endpoint', (done) => {
-            tapi.get('/')
+            tapi.get('/john')
             .expect(200, (err, resp) => {
 
                 expect(resp.text).to.be.a('string');
-                expect(resp.text).to.equal('hey world!');
 
                 done();
             });
