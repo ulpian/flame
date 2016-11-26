@@ -11,7 +11,7 @@ const Pack = require('./package');
 const api = new hapi.Server();
 
 // API connection config
-api.connection({ port: config.port });
+api.connection({ port: config.Base.port });
 
 // Routes setup
 api.route(ioc.routes);
@@ -28,7 +28,7 @@ api.register([require('inert'), require('vision'), {
     }], (err) => {
 
     if (err) {
-        console.log(err)
+        console.log(err);
     }
 
     api.start((err) => {
@@ -37,4 +37,4 @@ api.register([require('inert'), require('vision'), {
         }
         console.log(`Server running at: ${api.info.uri}`);
     });
-})
+});

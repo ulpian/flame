@@ -10,7 +10,7 @@ const request = require('supertest');
 // Initiate new HAPI server
 const api = new hapi.Server();
 // API connection config
-api.connection({ port: config.port });
+api.connection({ port: config.Base.port });
 // Routes setup
 api.route(ioc.routes);
 
@@ -18,13 +18,21 @@ api.route(ioc.routes);
 const tapi = request(api.listener);
 
 describe('Flame http endpoints tests', () => {
-    describe('/', () => {
+    describe('/hi', () => {
         it('Should get root endpoint', (done) => {
-            tapi.get('/john')
+            tapi.get('/hi/john')
             .expect(200, (err, resp) => {
-
                 expect(resp.text).to.be.a('string');
+                done();
+            });
+        });
+    });
 
+    describe('/flame', () => {
+        it('Should save a flame', (done) => {
+            tapi.post('/flame')
+            .expect(200, (err, resp) => {
+                console.log(resp.body);
                 done();
             });
         });

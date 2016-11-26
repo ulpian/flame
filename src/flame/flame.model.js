@@ -7,18 +7,22 @@ exports = module.exports = (joi) => {
     }
 
     return class FlameModel {
-        static val = (obj) => {
-            joi.validate(obj, model, (err, value) => {
-                if (err) {
-                    return err;
-                }
+        static getModel() {
+            return model;
+        }
 
-                return value;
+        static val(obj) {
+            return new Promise((res, rej) => {
+                joi.validate(obj, model, (err, value) => {
+                    if (err) {
+                        rej(err.details);
+                    }
+                    res(value);
+                });
             });
         }
     }
 };
 
 exports['@require'] = ['joi'];
-// Do not ensure that this object will have only 1 instance application-wide
-exports['@singleton'] = false;
+exports['@singleton'] = true;

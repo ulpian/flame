@@ -1,6 +1,6 @@
 'use strict';
 
-exports = module.exports = (joi, firebaseManager) => {
+exports = module.exports = (joi, firebaseManager, flameModel) => {
 
     // Set firebase
     let fb = new firebaseManager('/flames');
@@ -13,8 +13,12 @@ exports = module.exports = (joi, firebaseManager) => {
                 return false
             }
         }
+
+        static * save(flame) {
+            return yield flameModel.val(flame);
+        }
     }
 };
 
-exports['@require'] = ['joi', 'util/firebaseManager'];
+exports['@require'] = ['joi', 'firebaseManager', 'flame/flame.model'];
 exports['@singleton'] = true;

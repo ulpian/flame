@@ -1,12 +1,12 @@
 'use strict';
 
-exports = module.exports = (joi, flame) => {
+exports = module.exports = (joi, flame, flameModel) => {
     // Set routes array for Hapi
     let routes = [];
 
     routes.push({
         method: 'GET',
-        path: '/{name}',
+        path: '/hi/{name}',
         handler: (request, reply) => {
             reply(flame.sayhi(request.params.name));
         },
@@ -19,8 +19,21 @@ exports = module.exports = (joi, flame) => {
         }
     });
 
+    routes.push({
+        method: 'POST',
+        path: '/flame',
+        handler: (request, reply) => {
+            reply('flame.save');
+        },
+        config: {
+            validate: {
+                params: flameModel.getModel()
+            }
+        }
+    });
+
     return routes;
 };
 
-exports['@require'] = ['joi', 'flame/flame'];
+exports['@require'] = ['joi', 'flame/flame', 'flame/flame.model'];
 exports['@singleton'] = true;

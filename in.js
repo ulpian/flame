@@ -11,6 +11,7 @@ module.exports = (config) => {
     ioc.use(ioc.node_modules());
     ioc.use(ioc.dir(__dirname + '/routes'));
     ioc.use(ioc.dir(__dirname + '/src'));
+    ioc.use(ioc.dir(__dirname + '/util'));
 
     ioc.routes = [];
     ioc.routes = ioc.routes.concat(ioc.create('flame.routes'));

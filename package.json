@@ -14,19 +14,19 @@
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "chai": "^3.5.0",
+    "co": "^4.6.0",
     "config": "^1.24.0",
     "electrolyte": "^0.3.0",
     "firebase": "^3.5.3",
     "hapi": "^15.2.0",
     "hapi-swagger": "^7.4.0",
-    "inert": "^4.0.2",
-    "joi": "^9.2.0",
-    "mocha": "^3.1.2",
-    "supertest": "^2.0.1",
-    "vision": "^4.1.0"
+    "joi": "^9.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
   }
 }
