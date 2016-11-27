@@ -14,6 +14,7 @@
   "author": "Ulpian Morina <ulpianmorina@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "boom": "^4.2.0",
     "co": "^4.6.0",
     "config": "^1.24.0",
     "electrolyte": "^0.3.0",
