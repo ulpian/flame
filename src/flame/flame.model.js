@@ -3,7 +3,7 @@
 exports = module.exports = (joi) => {
     const model = {
         name: joi.string().alphanum().max(30).required(),
-        heat: joi.number().integer().min(0).max(10)
+        heat: joi.number().integer().min(0).max(10).required()
     }
 
     return class FlameModel {

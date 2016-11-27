@@ -1,5 +1,5 @@
 {
-  "name": "flame",
+  "name": "Flame",
   "version": "0.0.1",
   "description": "Test api server with hapi js and firebase",
   "main": "api.js",
@@ -20,7 +20,9 @@
     "firebase": "^3.5.3",
     "hapi": "^15.2.0",
     "hapi-swagger": "^7.4.0",
-    "joi": "^9.2.0"
+    "inert": "^4.0.2",
+    "joi": "^9.2.0",
+    "vision": "^4.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

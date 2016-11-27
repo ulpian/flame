@@ -21,7 +21,7 @@ api.register([require('inert'), require('vision'), {
         register: require('hapi-swagger'),
         options: {
             info: {
-                title: 'API Documentation',
+                title: `${Pack.name} API Documentation`,
                 version: Pack.version
             }
         }
